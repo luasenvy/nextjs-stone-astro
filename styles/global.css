@@ -1,19 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@keyframes fade-in {
-  from { opacity: 0; }
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-current: currentColor;
+  --color-transparent: transparent;
+  --color-white: #ffffff;
+  --color-scroll: hsl(24 9.8% 10% / .3);
 }
 
-@keyframes fade-out {
-  to { opacity: 0; }
+@theme inline {
+  --font-sans: var(--font-inter);
+
+  --color-primary-50: var(--color-stone-50);
+  --color-primary-100: var(--color-stone-100);
+  --color-primary-200: var(--color-stone-200);
+  --color-primary-300: var(--color-stone-300);
+  --color-primary-400: var(--color-stone-400);
+  --color-primary-500: var(--color-stone-500);
+  --color-primary-600: var(--color-stone-600);
+  --color-primary-700: var(--color-stone-700);
+  --color-primary-800: var(--color-stone-800);
+  --color-primary-900: var(--color-stone-900);
+  --color-primary-950: var(--color-stone-950);
 }
 
-::view-transition-old(root) {
-  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
+@layer base {
+  .dark {
+    --color-scroll: hsl(60 9.1% 97.8% / .3);
+  }
+
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-scroll);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
 }
 
-::view-transition-new(root) {
-  animation: 210ms cubic-bezier(0, 0, 0.2, 1) both fade-in;
+@utility text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+@utility text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+@utility text-base {
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+@utility text-lg {
+  font-size: 1.125rem;
+  line-height: 2rem;
+}
+@utility text-xl {
+  font-size: 1.25rem;
+  line-height: 2.125rem;
+}
+@utility text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@utility text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+}
+@utility text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+}
+@utility text-5xl {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+@utility text-6xl {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
 }

@@ -1,12 +1,12 @@
 # nextjs-stone-astro
 
-[Stone Astro Theme](https://github.com/m6v3l9/astro-theme-stone) for [Next.js](https://nextjs.org/)<sub>(14+ App Router)</sub>
+[Stone Astro Theme](https://github.com/m6v3l9/astro-theme-stone) for [Next.js](https://nextjs.org/)<sub>(15+ App Router)</sub>
 
 ## Tested Environment
 
 - debian - bookworm
-- nodejs - v20.17.0
-- npm - 10.8.3
+- nodejs - v22.14.0
+- npm - 11.2.0
 
 ## npm commands
 

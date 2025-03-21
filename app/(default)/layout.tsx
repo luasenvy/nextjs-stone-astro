@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import getTheme from "@/lib/getTheme";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +23,10 @@ export default function DefaultLayout({ children }: React.PropsWithChildren) {
 
   return (
     <body
-      className={`${inter.className} bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition`}
+      className={cn(
+        "bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition",
+        inter.className
+      )}
     >
       <Header />
       <main>{children}</main>

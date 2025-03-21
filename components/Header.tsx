@@ -1,14 +1,13 @@
 "use client";
 
-import classnames from "classnames";
 import Image from "next/image";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
-
-import Link from "@/components/ViewTransitionLink";
 
 import getTheme from "@/lib/getTheme";
 
+import { cn } from "@/lib/utils";
 import LogoInvertedImage from "@/public/assets/logo-inverted.svg";
 import LogoImage from "@/public/assets/logo.svg";
 
@@ -55,7 +54,7 @@ export default function Header() {
 
   return (
     <header
-      className={classnames("transition", {
+      className={cn("transition", {
         "bg-primary-500/10 dark:bg-primary-400/10": open,
         "bg-primary-50 dark:bg-primary-950": !open,
       })}
@@ -64,7 +63,7 @@ export default function Header() {
         <div className="flex">
           <Link
             href="/"
-            className="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
+            className="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline-2"
           >
             <span className="sr-only">Stone</span>
             <Image
@@ -85,7 +84,7 @@ export default function Header() {
           >
             <span className="sr-only">Toggle theme mode</span>
             <svg
-              className={classnames("h-6 w-6", { hidden: !isDark })}
+              className={cn("h-6 w-6", { hidden: !isDark })}
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -94,7 +93,7 @@ export default function Header() {
               <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path>
             </svg>
             <svg
-              className={classnames("h-6 w-6", { hidden: isDark })}
+              className={cn("h-6 w-6", { hidden: isDark })}
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -113,7 +112,7 @@ export default function Header() {
           >
             <span className="sr-only">Toggle menu</span>
             <svg
-              className={classnames("h-8 w-8", { hidden: open, block: !open })}
+              className={cn("h-8 w-8", { hidden: open, block: !open })}
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -122,7 +121,7 @@ export default function Header() {
               <path d="M19 8H5V10H19V8ZM19 14H5V16H19V14Z"></path>
             </svg>
             <svg
-              className={classnames("h-8 w-8", { block: open, hidden: !open })}
+              className={cn("h-8 w-8", { block: open, hidden: !open })}
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -135,14 +134,14 @@ export default function Header() {
       </div>
 
       <div
-        className={classnames("mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8", {
+        className={cn("mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8", {
           hidden: !open,
         })}
         id="website-menu"
       >
-        <div className="grid grid-cols-1 gap-16 pb-24 pt-6 lg:grid-cols-2 lg:pt-12">
+        <div className="grid grid-cols-1 gap-16 pt-6 pb-24 lg:grid-cols-2 lg:pt-12">
           <div className="bg-primary-500/10 dark:bg-primary-400/10 hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex">
-            <p className="text-primary-950/70 dark:text-primary-200/70 max-w-sm text-xl italic leading-loose">
+            <p className="text-primary-950/70 dark:text-primary-200/70 max-w-sm text-xl leading-loose italic">
               <span className="font-medium">Stone</span> is a premium Astro theme specially designed
               for Business, Marketing, SaaS and Startup websites.
             </p>
@@ -156,7 +155,7 @@ export default function Header() {
                 onClick={() => setOpen((prev) => !prev)}
                 className="text-primary-950 dark:text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl"
               >
-                <div className="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
+                <div className="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
                   <div className="flex items-center gap-6">
                     <span className="text-xs">{link.ref}</span>
                     <span className="group-hover:underline">{link.name}</span>

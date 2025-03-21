@@ -12,7 +12,7 @@ export default function PrivacyPage() {
           [website/app/service]. Please take a moment to read through this document to understand
           our practices.
         </p>
-        <h2 className="mb-6 mt-12 text-xl font-medium sm:text-2xl">1. Information We Collect</h2>
+        <h2 className="mt-12 mb-6 text-xl font-medium sm:text-2xl">1. Information We Collect</h2>
         <p className="mb-6">
           We may collect the following types of personal information when you interact with our
           [website/app/service]:
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
             your experience, understand usage patterns, and improve our [website/app/service].
           </li>
         </ul>
-        <h2 className="mb-6 mt-12 text-xl font-medium sm:text-2xl">
+        <h2 className="mt-12 mb-6 text-xl font-medium sm:text-2xl">
           2. How We Use Your Information
         </h2>
         <p className="mb-4">We may use your personal information for the following purposes:</p>
@@ -52,7 +52,7 @@ export default function PrivacyPage() {
             our [website/app/service].
           </li>
         </ul>
-        <h2 className="mb-6 mt-12 text-xl font-medium sm:text-2xl">Contact Us</h2>
+        <h2 className="mt-12 mb-6 text-xl font-medium sm:text-2xl">Contact Us</h2>
         <p className="mb-4">
           If you have any questions or concerns about our Privacy Policy, please contact us at
           [contact email/phone number/address].

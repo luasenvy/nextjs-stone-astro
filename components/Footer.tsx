@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
-
-import Link from "@/components/ViewTransitionLink";
 
 import getTheme from "@/lib/getTheme";
 
@@ -149,7 +148,7 @@ export default function Footer() {
                     <li key={`group-link-${i}`}>
                       <Link
                         href={link.href}
-                        className="focus-visible:outline-primary-950 dark:focus-visible:outline-primary-200 inline-flex items-center gap-1 rounded-md text-base hover:underline focus-visible:outline focus-visible:outline-2"
+                        className="focus-visible:outline-primary-950 dark:focus-visible:outline-primary-200 inline-flex items-center gap-1 rounded-md text-base hover:underline focus-visible:outline-2"
                         target={link.isExternal ? "_blank" : undefined}
                         rel={link.isExternal ? "noopener" : undefined}
                       >

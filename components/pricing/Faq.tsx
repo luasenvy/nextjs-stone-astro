@@ -1,7 +1,8 @@
 "use client";
 
-import classnames from "classnames";
 import { useState } from "react";
+
+import { cn } from "@/lib/utils";
 
 const questions = [
   {
@@ -62,12 +63,12 @@ export default function Faq() {
                 return (
                   <div
                     key={`qustion-${i}`}
-                    className={classnames("rounded-3xl px-4 transition", {
+                    className={cn("rounded-3xl px-4 transition", {
                       "bg-primary-500/10 dark:bg-primary-400/10": isOpen,
                     })}
                   >
                     <dt
-                      className={classnames("border-b text-lg transition", {
+                      className={cn("border-b text-lg transition", {
                         "border-transparent": isOpen || isNextOpen,
                         "border-primary-900/10 dark:border-primary-300/10": !isOpen && !isNextOpen,
                       })}
@@ -79,11 +80,11 @@ export default function Faq() {
                         onClick={() => setSelected(i)}
                         aria-expanded={isOpen}
                       >
-                        <div className="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
+                        <div className="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex items-center justify-between rounded-3xl group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
                           <span className="font-medium">{question.title}</span>
                           <span className="ml-6 flex h-7 items-center">
                             <svg
-                              className={classnames(
+                              className={cn(
                                 "text-primary-600 dark:text-primary-400 h-6 w-6 rotate-0 transform transition duration-200 ease-in-out",
                                 { "-rotate-180": isOpen, "rotate-0": !isOpen }
                               )}
@@ -98,7 +99,7 @@ export default function Faq() {
                         </div>
                       </button>
                     </dt>
-                    <dd className={classnames("pb-6 pr-6", { hidden: !isOpen })} id={question.id}>
+                    <dd className={cn("pr-6 pb-6", { hidden: !isOpen })} id={question.id}>
                       <p className="text-primary-950/70 dark:text-primary-200/70 text-base">
                         {question.answer}
                       </p>

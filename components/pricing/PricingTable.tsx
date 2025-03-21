@@ -1,6 +1,6 @@
-import classnames from "classnames";
+import Link from "next/link";
 
-import Link from "@/components/ViewTransitionLink";
+import { cn } from "@/lib/utils";
 
 const pricing = [
   {
@@ -45,7 +45,7 @@ export default function PciringTable() {
           {pricing.map((item, i) => (
             <div
               key={`pricing-${i}`}
-              className={classnames("relative flex flex-col gap-8 rounded-3xl p-8", {
+              className={cn("relative flex flex-col gap-8 rounded-3xl p-8", {
                 "bg-primary-500/10 dark:bg-primary-400/10": item.isFlagged,
               })}
             >
@@ -80,7 +80,7 @@ export default function PciringTable() {
               </div>
               <Link
                 href="#"
-                className="bg-primary-600 dark:bg-primary-400 hover:bg-primary-700 dark:hover:bg-primary-300 focus-visible:outline-primary-600 dark:focus-visible:outline-primary-400 dark:text-primary-950 inline-flex w-full items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                className="bg-primary-600 dark:bg-primary-400 hover:bg-primary-700 dark:hover:bg-primary-300 focus-visible:outline-primary-600 dark:focus-visible:outline-primary-400 dark:text-primary-950 inline-flex w-full items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 Buy now
               </Link>

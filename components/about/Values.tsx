@@ -1,4 +1,4 @@
-import classnames from "classnames";
+import { cn } from "@/lib/utils";
 
 const values = [
   [
@@ -39,7 +39,7 @@ export default function Values() {
           <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">Our Values</h2>
           <div className="grid gap-8 lg:grid-cols-2">
             {values.map((column, i) => (
-              <div key={`column-${i}`} className={classnames("space-y-8", { "lg:mt-16": i === 1 })}>
+              <div key={`column-${i}`} className={cn("space-y-8", { "lg:mt-16": i === 1 })}>
                 {column.map((value, i) => (
                   <div
                     key={`column-value-${i}`}
