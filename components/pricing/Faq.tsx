@@ -43,7 +43,7 @@ const questions = [
   },
 ];
 
-export default function Faq() {
+export function Faq() {
   const [selected, setSelected] = useState<number>();
 
   return (

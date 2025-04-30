@@ -1,4 +1,4 @@
-export default function ContactInfo() {
+export function ContactInfo() {
   return (
     <section className="py-16 sm:py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">

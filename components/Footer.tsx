@@ -83,7 +83,7 @@ const bottomLinks = [
   },
 ];
 
-export default function Footer() {
+export function Footer() {
   const [isDark, setIsDark] = useState<boolean>(false);
 
   useEffect(() => {

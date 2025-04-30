@@ -34,7 +34,7 @@ const links = [
   },
 ];
 
-export default function Header() {
+export function Header() {
   const [isDark, setIsDark] = useState<boolean>(false);
 
   const [open, setOpen] = useState(false);

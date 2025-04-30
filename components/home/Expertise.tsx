@@ -43,7 +43,7 @@ const features = [
   },
 ];
 
-export default function Expertise() {
+export function Expertise() {
   const [selected, setSelected] = useState<number>();
 
   return (

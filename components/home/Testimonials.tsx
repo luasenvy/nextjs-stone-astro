@@ -28,7 +28,7 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials() {
+export function Testimonials() {
   return (
     <section className="py-16 sm:py-20">
       <div className="v mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">

@@ -4,14 +4,15 @@ import { Inter } from "next/font/google";
 
 import { useEffect } from "react";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import getTheme from "@/lib/getTheme";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-sans",
 });
 
 export default function DefaultLayout({ children }: React.PropsWithChildren) {
@@ -25,7 +26,7 @@ export default function DefaultLayout({ children }: React.PropsWithChildren) {
     <body
       className={cn(
         "bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition",
-        inter.className
+        inter.variable
       )}
     >
       <Header />
