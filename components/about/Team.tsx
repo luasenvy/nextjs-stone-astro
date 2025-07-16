@@ -27,12 +27,12 @@ export function Team() {
     <section className="py-16 sm:py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="sm:space-8 space-y-12">
-          <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">Meet our team</h2>
+          <h2 className="font-medium text-3xl tracking-tight sm:text-4xl">Meet our team</h2>
           <ul role="list" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((item, i) => (
               <li
                 key={`team-${i}`}
-                className="border-primary-900/10 dark:border-primary-300/10 rounded-3xl border px-6 py-8"
+                className="rounded-3xl border border-primary-900/10 px-6 py-8 dark:border-primary-300/10"
               >
                 <div className="space-y-6">
                   <Image
@@ -41,8 +41,8 @@ export function Team() {
                     alt={item.name}
                   />
                   <div className="text-center">
-                    <h3 className="text-lg font-medium">{item.name}</h3>
-                    <p className="text-primary-950/70 dark:text-primary-200/70 text-base">
+                    <h3 className="font-medium text-lg">{item.name}</h3>
+                    <p className="text-base text-primary-950/70 dark:text-primary-200/70">
                       {item.job}
                     </p>
                   </div>

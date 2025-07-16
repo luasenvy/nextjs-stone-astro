@@ -35,22 +35,22 @@ export function Mission() {
           />
           <div className="flex flex-col gap-10">
             <div className="space-y-8 sm:space-y-12">
-              <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">Our mission</h2>
+              <h2 className="font-medium text-3xl tracking-tight sm:text-4xl">Our mission</h2>
               <div className="space-y-6">
-                <p className="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                <p className="text-base text-primary-950/70 sm:text-lg dark:text-primary-200/70">
                   Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed
                   consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu
                   morbi. Cursus faucibus nunc nisl netus morbi vel porttitor vitae ut. Amet vitae
                   fames senectus vitae.
                 </p>
-                <p className="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                <p className="text-base text-primary-950/70 sm:text-lg dark:text-primary-200/70">
                   Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem
                   nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet
                   quam urna. Sollicitudin tristique eros erat odio sed vitae, consequat turpis
                   elementum. Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut
                   volutpat donec laoreet quam urna.
                 </p>
-                <p className="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                <p className="text-base text-primary-950/70 sm:text-lg dark:text-primary-200/70">
                   Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel ultricies.
                   Vulputate aliquet velit faucibus semper. Pellentesque in venenatis vestibulum
                   consectetur nibh id. In id ut tempus egestas. Enim sit aliquam nec, a. Morbi enim
@@ -63,10 +63,10 @@ export function Mission() {
               {stats.map((stat, i) => (
                 <div
                   key={`stat-${i}`}
-                  className="border-primary-900/10 dark:border-primary-300/10 rounded-3xl border p-6"
+                  className="rounded-3xl border border-primary-900/10 p-6 dark:border-primary-300/10"
                 >
                   <dt className="text-base">{stat.name}</dt>
-                  <dd className="text-3xl font-medium tracking-tight">{stat.value}</dd>
+                  <dd className="font-medium text-3xl tracking-tight">{stat.value}</dd>
                 </div>
               ))}
             </dl>

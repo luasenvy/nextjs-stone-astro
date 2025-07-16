@@ -51,7 +51,7 @@ export function Faq() {
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
           <div>
-            <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
+            <h2 className="font-medium text-3xl tracking-tight sm:text-4xl">
               Frequently asked questions
             </h2>
           </div>
@@ -80,13 +80,13 @@ export function Faq() {
                         onClick={() => setSelected(i)}
                         aria-expanded={isOpen}
                       >
-                        <div className="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex items-center justify-between rounded-3xl group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
+                        <div className="flex items-center justify-between rounded-3xl group-focus-visible:outline-2 group-focus-visible:outline-primary-950 group-focus-visible:outline-offset-2 dark:group-focus-visible:outline-primary-200">
                           <span className="font-medium">{question.title}</span>
                           <span className="ml-6 flex h-7 items-center">
                             <svg
                               className={cn(
-                                "text-primary-600 dark:text-primary-400 h-6 w-6 rotate-0 transform transition duration-200 ease-in-out",
-                                { "-rotate-180": isOpen, "rotate-0": !isOpen }
+                                "h-6 w-6 rotate-0 transform text-primary-600 transition duration-200 ease-in-out dark:text-primary-400",
+                                { "-rotate-180": isOpen, "rotate-0": !isOpen },
                               )}
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 24 24"
@@ -100,7 +100,7 @@ export function Faq() {
                       </button>
                     </dt>
                     <dd className={cn("pr-6 pb-6", { hidden: !isOpen })} id={question.id}>
-                      <p className="text-primary-950/70 dark:text-primary-200/70 text-base">
+                      <p className="text-base text-primary-950/70 dark:text-primary-200/70">
                         {question.answer}
                       </p>
                     </dd>

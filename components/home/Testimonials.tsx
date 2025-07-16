@@ -33,10 +33,10 @@ export function Testimonials() {
     <section className="py-16 sm:py-20">
       <div className="v mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="flex flex-col items-center gap-12 lg:gap-20">
-          <h2 className="mx-auto max-w-xl text-center text-3xl font-medium tracking-tight sm:text-4xl">
+          <h2 className="mx-auto max-w-xl text-center font-medium text-3xl tracking-tight sm:text-4xl">
             Trusted by the largest companies in the world
           </h2>
-          <div className="divide-primary-900/10 dark:divide-primary-300/10 grid divide-y lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+          <div className="grid divide-y divide-primary-900/10 lg:grid-cols-3 lg:divide-x lg:divide-y-0 dark:divide-primary-300/10">
             {testimonials.map((testimonial, i) => (
               <figure
                 key={`testimonial-${i}`}
@@ -46,7 +46,7 @@ export function Testimonials() {
                   {[...Array(3)].map((_, i) => (
                     <svg
                       key={`icon-${i}`}
-                      className="text-primary-600 dark:text-primary-400 h-6 w-6"
+                      className="h-6 w-6 text-primary-600 dark:text-primary-400"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -56,14 +56,14 @@ export function Testimonials() {
                     </svg>
                   ))}
                 </div>
-                <blockquote className="text-primary-950/70 dark:text-primary-200/70 text-center text-lg leading-loose italic">
+                <blockquote className="text-center text-lg text-primary-950/70 italic leading-loose dark:text-primary-200/70">
                   <p>{testimonial.message}</p>
                 </blockquote>
                 <figcaption className="flex flex-col gap-4">
                   <Image className="mx-auto h-8 w-8 rounded-full" src={testimonial.image} alt="" />
                   <div className="text-center">
-                    <div className="text-base font-medium">{testimonial.name}</div>
-                    <div className="text-primary-950/70 dark:text-primary-200/70 text-sm">
+                    <div className="font-medium text-base">{testimonial.name}</div>
+                    <div className="text-primary-950/70 text-sm dark:text-primary-200/70">
                       {testimonial.description}
                     </div>
                   </div>

@@ -50,14 +50,14 @@ export function PricingTable() {
               })}
             >
               <div className="flex-1">
-                <h2 className="text-xl font-medium">{item.name}</h2>
+                <h2 className="font-medium text-xl">{item.name}</h2>
                 <p className="mt-4 flex items-baseline">
-                  <span className="text-4xl font-medium tracking-tight">{item.price}</span>
-                  <span className="text-primary-950/70 dark:text-primary-200/70 ml-1 text-sm font-medium">
+                  <span className="font-medium text-4xl tracking-tight">{item.price}</span>
+                  <span className="ml-1 font-medium text-primary-950/70 text-sm dark:text-primary-200/70">
                     {item.periodicity}
                   </span>
                 </p>
-                <p className="text-primary-950/70 dark:text-primary-200/70 mt-6">
+                <p className="mt-6 text-primary-950/70 dark:text-primary-200/70">
                   {item.description}
                 </p>
 
@@ -65,7 +65,7 @@ export function PricingTable() {
                   {item.features.map((feature, i) => (
                     <li key={`feature-${i}`} className="flex gap-3">
                       <svg
-                        className="text-primary-600 dark:text-primary-400 h-6 w-6 flex-shrink-0"
+                        className="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
@@ -80,7 +80,7 @@ export function PricingTable() {
               </div>
               <Link
                 href="#"
-                className="bg-primary-600 dark:bg-primary-400 hover:bg-primary-700 dark:hover:bg-primary-300 focus-visible:outline-primary-600 dark:focus-visible:outline-primary-400 dark:text-primary-950 inline-flex w-full items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline-2 focus-visible:outline-offset-2"
+                className="inline-flex w-full items-center justify-center rounded-full border border-transparent bg-primary-600 px-5 py-3 font-medium text-base text-white transition hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-primary-600 focus-visible:outline-offset-2 dark:bg-primary-400 dark:text-primary-950 dark:focus-visible:outline-primary-400 dark:hover:bg-primary-300"
               >
                 Buy now
               </Link>

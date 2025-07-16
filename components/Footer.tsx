@@ -6,9 +6,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import getTheme from "@/lib/getTheme";
-
-import LogoInvertedImage from "@/public/assets/logo-inverted.svg";
 import LogoImage from "@/public/assets/logo.svg";
+import LogoInvertedImage from "@/public/assets/logo-inverted.svg";
 
 const bottomLinks = [
   {
@@ -92,7 +91,7 @@ export function Footer() {
 
   return (
     <footer
-      className="bg-primary-500/10 dark:bg-primary-400/10 mt-16 py-16 lg:mt-20 lg:py-20"
+      className="mt-16 bg-primary-500/10 py-16 lg:mt-20 lg:py-20 dark:bg-primary-400/10"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
@@ -109,15 +108,15 @@ export function Footer() {
               src={isDark ? LogoInvertedImage : LogoImage}
               alt="Stone"
             />
-            <p className="text-primary-950/70 dark:text-primary-200/70 text-base">
+            <p className="text-base text-primary-950/70 dark:text-primary-200/70">
               Stone is a premium Astro theme specially designed for Business, Marketing, SaaS and
               Startup websites.
             </p>
-            <p className="text-primary-950/70 dark:text-primary-200/70 text-sm">
+            <p className="text-primary-950/70 text-sm dark:text-primary-200/70">
               &copy; 2023 Stone
             </p>
 
-            <p className="text-primary-950/70 dark:text-primary-200/70 text-xs">
+            <p className="text-primary-950/70 text-xs dark:text-primary-200/70">
               Created by{" "}
               <Link
                 href="https://github.com/m6v3l9/astro-theme-stone"
@@ -142,13 +141,13 @@ export function Footer() {
           <div className="grid max-w-xl flex-1 grid-cols-1 gap-8 sm:grid-cols-3">
             {bottomLinks.map((group, i) => (
               <div key={`buttom-link-${i}`} className="flex flex-col gap-4">
-                <p className="text-base font-medium">{group.header}</p>
+                <p className="font-medium text-base">{group.header}</p>
                 <ul role="list" className="flex flex-col gap-3">
                   {group.links.map((link, i) => (
                     <li key={`group-link-${i}`}>
                       <Link
                         href={link.href}
-                        className="focus-visible:outline-primary-950 dark:focus-visible:outline-primary-200 inline-flex items-center gap-1 rounded-md text-base hover:underline focus-visible:outline-2"
+                        className="inline-flex items-center gap-1 rounded-md text-base hover:underline focus-visible:outline-2 focus-visible:outline-primary-950 dark:focus-visible:outline-primary-200"
                         target={link.isExternal ? "_blank" : undefined}
                         rel={link.isExternal ? "noopener" : undefined}
                       >

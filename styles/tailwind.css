@@ -6,7 +6,7 @@
   --current: currentColor;
   --transparent: transparent;
   --white: #ffffff;
-  
+
   --primary-50: var(--color-stone-50);
   --primary-100: var(--color-stone-100);
   --primary-200: var(--color-stone-200);
@@ -19,8 +19,8 @@
   --primary-900: var(--color-stone-900);
   --primary-950: var(--color-stone-950);
 
-  --scroll: hsl(24 9.8% 10% / .3);
-  
+  --scroll: hsl(24 9.8% 10% / 0.3);
+
   --text-xs: 0.75rem;
   --text-xs--line-height: 1rem;
   --text-sm: 0.875rem;
@@ -44,7 +44,7 @@
 }
 
 .dark {
-  --scroll: hsl(60 9.1% 97.8% / .3);
+  --scroll: hsl(60 9.1% 97.8% / 0.3);
 }
 
 @theme inline {

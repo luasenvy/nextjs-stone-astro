@@ -25,8 +25,8 @@ export default function DefaultLayout({ children }: React.PropsWithChildren) {
   return (
     <body
       className={cn(
-        "bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition",
-        inter.variable
+        "bg-primary-50 text-primary-950 antialiased transition dark:bg-primary-950 dark:text-primary-200",
+        inter.variable,
       )}
     >
       <Header />

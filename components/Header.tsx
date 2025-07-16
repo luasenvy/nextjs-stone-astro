@@ -8,8 +8,8 @@ import { useEffect, useState } from "react";
 import getTheme from "@/lib/getTheme";
 
 import { cn } from "@/lib/utils";
-import LogoInvertedImage from "@/public/assets/logo-inverted.svg";
 import LogoImage from "@/public/assets/logo.svg";
+import LogoInvertedImage from "@/public/assets/logo-inverted.svg";
 
 const links = [
   {
@@ -63,7 +63,7 @@ export function Header() {
         <div className="flex">
           <Link
             href="/"
-            className="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline-2"
+            className="rounded-md focus-visible:outline-2 focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200"
           >
             <span className="sr-only">Stone</span>
             <Image
@@ -79,7 +79,7 @@ export function Header() {
         <div className="-mr-2 flex items-center space-x-2 sm:space-x-3">
           <button
             type="button"
-            className="text-primary-950 dark:text-primary-200 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 ring-primary-950 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none focus-visible:ring-2"
+            className="inline-flex h-14 w-14 items-center justify-center rounded-full text-primary-950 ring-primary-950 transition hover:bg-primary-500/10 focus:outline-none focus-visible:ring-2 dark:text-primary-200 dark:hover:bg-primary-400/10"
             onClick={toggleTheme}
           >
             <span className="sr-only">Toggle theme mode</span>
@@ -105,7 +105,7 @@ export function Header() {
 
           <button
             type="button"
-            className="text-primary-950 dark:text-primary-200 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 ring-primary-950 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none focus-visible:ring-2"
+            className="inline-flex h-14 w-14 items-center justify-center rounded-full text-primary-950 ring-primary-950 transition hover:bg-primary-500/10 focus:outline-none focus-visible:ring-2 dark:text-primary-200 dark:hover:bg-primary-400/10"
             onClick={() => setOpen((prev) => !prev)}
             aria-controls="website-menu"
             aria-expanded={open}
@@ -140,28 +140,28 @@ export function Header() {
         id="website-menu"
       >
         <div className="grid grid-cols-1 gap-16 pt-6 pb-24 lg:grid-cols-2 lg:pt-12">
-          <div className="bg-primary-500/10 dark:bg-primary-400/10 hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex">
-            <p className="text-primary-950/70 dark:text-primary-200/70 max-w-sm text-xl leading-loose italic">
+          <div className="hidden items-center justify-center rounded-3xl bg-primary-500/10 px-6 py-8 lg:flex dark:bg-primary-400/10">
+            <p className="max-w-sm text-primary-950/70 text-xl italic leading-loose dark:text-primary-200/70">
               <span className="font-medium">Stone</span> is a premium Astro theme specially designed
               for Business, Marketing, SaaS and Startup websites.
             </p>
           </div>
 
-          <nav className="divide-primary-900/10 dark:divide-primary-300/10 flex flex-col gap-1 divide-y">
+          <nav className="flex flex-col gap-1 divide-y divide-primary-900/10 dark:divide-primary-300/10">
             {links.map((link, i) => (
               <Link
                 key={`link-${i}`}
                 href={link.href}
                 onClick={() => setOpen((prev) => !prev)}
-                className="text-primary-950 dark:text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl"
+                className="group inline-flex py-6 font-medium text-3xl text-primary-950 tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl dark:text-primary-200"
               >
-                <div className="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
+                <div className="flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline-2 group-focus-visible:outline-primary-950 group-focus-visible:outline-offset-2 dark:group-focus-visible:outline-primary-200">
                   <div className="flex items-center gap-6">
                     <span className="text-xs">{link.ref}</span>
                     <span className="group-hover:underline">{link.name}</span>
                   </div>
                   <svg
-                    className="text-primary-600 dark:text-primary-400 h-6 w-6 sm:h-8 sm:w-8"
+                    className="h-6 w-6 text-primary-600 sm:h-8 sm:w-8 dark:text-primary-400"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
