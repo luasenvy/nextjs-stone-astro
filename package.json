@@ -12,7 +12,7 @@
     "dev": "next dev",
     "build": "rm -rf .next && next build",
     "start": "next start",
-    "lint": "npx biome check",
+    "lint": "biome check",
     "prepare": "husky"
   },
   "lint-staged": {
