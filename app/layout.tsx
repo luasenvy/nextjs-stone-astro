@@ -10,6 +10,10 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en">{children}</html>;
+export default function RootLayout({ children }: React.PropsWithChildren) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      {children}
+    </html>
+  );
 }

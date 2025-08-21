@@ -3,9 +3,8 @@
 import Image from "next/image";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-import getTheme from "@/lib/getTheme";
+import { useTheme } from "next-themes";
+import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 import LogoImage from "@/public/assets/logo.svg";
@@ -35,22 +34,9 @@ const links = [
 ];
 
 export function Header() {
-  const [isDark, setIsDark] = useState<boolean>(false);
+  const { theme = "system", setTheme } = useTheme();
 
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const isDark = "dark" === getTheme();
-
-    setIsDark(isDark);
-  }, []);
-
-  const toggleTheme = () => {
-    const toggleTheme = !isDark;
-    localStorage.theme = isDark ? "light" : "dark";
-    setIsDark(toggleTheme);
-    document.documentElement.classList.toggle("dark", toggleTheme);
-  };
 
   return (
     <header
@@ -70,7 +56,7 @@ export function Header() {
               className="h-8 w-auto"
               width="65"
               height="40"
-              src={isDark ? LogoInvertedImage : LogoImage}
+              src={theme === "dark" ? LogoInvertedImage : LogoImage}
               alt="Stone"
             />
           </Link>
@@ -80,11 +66,11 @@ export function Header() {
           <button
             type="button"
             className="inline-flex h-14 w-14 items-center justify-center rounded-full text-primary-950 ring-primary-950 transition hover:bg-primary-500/10 focus:outline-none focus-visible:ring-2 dark:text-primary-200 dark:hover:bg-primary-400/10"
-            onClick={toggleTheme}
+            onClick={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
           >
             <span className="sr-only">Toggle theme mode</span>
             <svg
-              className={cn("h-6 w-6", { hidden: !isDark })}
+              className={cn("h-6 w-6", { hidden: theme !== "dark" })}
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -93,7 +79,7 @@ export function Header() {
               <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path>
             </svg>
             <svg
-              className={cn("h-6 w-6", { hidden: isDark })}
+              className={cn("h-6 w-6", { hidden: theme === "dark" })}
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"

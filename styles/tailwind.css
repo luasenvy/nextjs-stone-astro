@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {
   --current: currentColor;
@@ -44,7 +44,7 @@
   --text-6xl--line-height: 4.25rem;
 }
 
-.dark {
+[data-theme="dark"] {
   --scroll: hsl(60 9.1% 97.8% / 0.3);
 }
 

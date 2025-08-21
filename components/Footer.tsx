@@ -3,9 +3,7 @@
 import Image from "next/image";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-import getTheme from "@/lib/getTheme";
+import { useTheme } from "next-themes";
 import LogoImage from "@/public/assets/logo.svg";
 import LogoInvertedImage from "@/public/assets/logo-inverted.svg";
 
@@ -83,11 +81,7 @@ const bottomLinks = [
 ];
 
 export function Footer() {
-  const [isDark, setIsDark] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsDark("dark" === getTheme());
-  }, []);
+  const { theme = "system" } = useTheme();
 
   return (
     <footer
@@ -105,7 +99,7 @@ export function Footer() {
               className="h-8 w-auto"
               width="65"
               height="40"
-              src={isDark ? LogoInvertedImage : LogoImage}
+              src={theme === "dark" ? LogoInvertedImage : LogoImage}
               alt="Stone"
             />
             <p className="text-base text-primary-950/70 dark:text-primary-200/70">

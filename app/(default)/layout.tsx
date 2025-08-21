@@ -1,12 +1,10 @@
 "use client";
 
 import { Inter } from "next/font/google";
-
+import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
-
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import getTheme from "@/lib/getTheme";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({
@@ -16,12 +14,6 @@ const inter = Inter({
 });
 
 export default function DefaultLayout({ children }: React.PropsWithChildren) {
-  useEffect(() => {
-    const isDark = "dark" === getTheme();
-    localStorage.theme = isDark ? "dark" : "light";
-    document.documentElement.classList.toggle("dark", isDark);
-  }, []);
-
   return (
     <body
       className={cn(
@@ -29,9 +21,11 @@ export default function DefaultLayout({ children }: React.PropsWithChildren) {
         inter.variable,
       )}
     >
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <ThemeProvider defaultTheme="system" enableSystem disableTransitionOnChange>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </ThemeProvider>
     </body>
   );
 }
